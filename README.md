@@ -1,57 +1,47 @@
-﻿# HireAI
+# HireAI
 
-## AI Recruitment Assistant
+## AI-Powered Recruitment Assistant
 
-HireAI is an AI-powered recruitment platform that helps companies manage job applications, analyze candidate resumes, and improve the hiring process.
+HireAI is a full-stack AI-powered recruitment platform designed to simplify and improve the hiring process.
 
-## Project Goal
+The platform connects **companies, HR users, and candidates** in one system. It allows companies to publish jobs, candidates to create profiles and upload resumes, and HR users to review applications and use AI-powered tools to assist with candidate evaluation.
 
-The goal of this project is to build a recruitment system where:
+---
 
-- Companies can create job posts.
-- Candidates can apply for jobs.
-- HR users can review applicants.
-- AI can analyze resumes and rank candidates.
+## 🎯 Project Goal
 
-## Technologies Used
+The goal of HireAI is to build a modern recruitment platform that helps companies:
 
-### Backend
-- ASP.NET Core Web API
-- C#
-- Entity Framework Core
-- SQL Server
+- Create and manage job postings
+- Receive and manage candidate applications
+- Review candidate profiles and resumes
+- Use AI to analyze resumes
+- Match candidates with suitable jobs
+- Improve the recruitment and candidate selection process
 
-### Tools
-- Visual Studio
-- Git & GitHub
-- Swagger
+---
 
-## Main Features
+## 🏗️ Project Structure
 
-### Candidates
-- Create profile
-- Upload CV
-- Apply for jobs
-- Receive AI resume feedback
+The project is organized as a full-stack application:
 
-### HR / Companies
-- Create company profile
-- Publish job posts
-- Review candidates
-- Analyze resumes using AI
-
-## Project Status
-
-🚧 Currently under development.
-
-## Future Features
-
-- AI resume scoring
-- Candidate ranking
-- Interview question generation
-- React frontend
-- Docker deployment
-
-## Author
-
-Ali Younes
+```text
+HireAI/
+│
+├── HireAI.API/
+│   ├── Controllers/
+│   ├── Data/
+│   ├── DTOs/
+│   ├── Migrations/
+│   ├── Models/
+│   ├── Services/
+│   ├── Uploads/
+│   ├── Program.cs
+│   └── appsettings.json
+│
+└── HireAI.Frontend/
+    ├── src/
+    ├── public/
+    ├── package.json
+    ├── vite.config.js
+    └── ...
