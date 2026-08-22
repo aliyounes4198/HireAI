@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-ink text-ivory font-body antialiased;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(220,211,185,0.045) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-ivory;
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background: rgba(201,162,74,0.35);
+  }
+  :focus-visible {
+    outline: 2px solid #C9A24A;
+    outline-offset: 2px;
+  }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: #12151B; }
+  ::-webkit-scrollbar-thumb { background: #2B3140; border-radius: 8px; }
+}
+
+@layer components {
+  /* The dossier card — the app's signature surface */
+  .file-card {
+    @apply relative bg-panel border border-line rounded-[3px] shadow-card;
+  }
+  .file-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 18px;
+    width: 46px; height: 8px;
+    background: #2B3140;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .tab-btn {
+    @apply px-4 py-2 font-mono text-[11px] tracking-[0.14em] uppercase text-muted border border-transparent rounded-t-[3px] transition-colors;
+  }
+  .tab-btn[data-active="true"] {
+    @apply text-ivory bg-panel border-line border-b-panel;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-brass text-ink2 font-body font-semibold text-sm px-4 py-2.5 rounded-[2px] transition-all hover:bg-brass-bright active:translate-y-px disabled:opacity-40 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent border border-line text-ivory font-body text-sm px-4 py-2.5 rounded-[2px] transition-colors hover:border-brass hover:text-brass disabled:opacity-40 disabled:pointer-events-none;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent border border-stamp-rejectedDim text-stamp-rejected font-body text-sm px-4 py-2.5 rounded-[2px] transition-colors hover:bg-stamp-rejected hover:text-ink2 disabled:opacity-40 disabled:pointer-events-none;
+  }
+
+  .field-label {
+    @apply block font-mono text-[10px] tracking-[0.16em] uppercase text-mutedCool mb-1.5;
+  }
+  .field-input {
+    @apply w-full bg-ink2 border border-line rounded-[2px] px-3 py-2.5 text-sm text-ivory placeholder:text-muted/60 transition-colors focus:border-brass focus:outline-none;
+  }
+  .field-textarea {
+    @apply field-input resize-y min-h-[110px];
+  }
+
+  .stamp-chip {
+    @apply inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase px-2 py-1 rounded-[2px] border;
+  }
+}
+
+@keyframes sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-sweep {
+  animation: sweep 3s linear infinite;
+}
